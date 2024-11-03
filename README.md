@@ -2,4 +2,5 @@
 
 A single landing page
 
-testetetetete
+npm install next react react-dom
+npm run dev
