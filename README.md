@@ -2,5 +2,8 @@
 
 A single landing page
 
-npm install next react react-dom
+starting the project
+npm install
 npm run dev
+
+tree -I 'node_modules|.next'
