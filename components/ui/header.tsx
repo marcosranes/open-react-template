@@ -2,49 +2,99 @@
 
 import Link from "next/link";
 import Logo from "./logo";
+import { useState } from "react";
 
 export default function Header() {
+  const [isClick, setisClick] = useState(false);
+  const toggleNavbar = (): void => {
+    setisClick(!isClick);
+  };
+
   return (
     <header className="z-30 mt-2 w-full md:mt-5">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/90 px-3 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,theme(colors.gray.800),theme(colors.gray.700),theme(colors.gray.800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-sm">
           {/* Site branding */}
-          <div className="flex flex-1 justify-between">
-            <Logo />
-            <div className="ml-12 flex items-center space-x-20">
-            <a
-                className="hover:underline hover:underline-offset-4"
-                href="/"
-                rel="noopener noreferrer"
-              >
-                Home
-              </a>
-              <a
-                className="hover:underline hover:underline-offset-4"
-                href="/about"
-                rel="noopener noreferrer"
-              >
-                About
-              </a>
-              <a
-                className="hover:underline hover:underline-offset-4"
-                href="/services"
-                rel="noopener noreferrer"
-              >
-                Services
-              </a>
-              <a
-                className="hover:underline hover:underline-offset-4"
-                href="/contact"
-                rel="noopener noreferrer"
-              >
-                Contact
-              </a>
+          <Logo />
+          <div className="max-w-7x1 mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex-shrink-0">
+                <div className="hidden md:block">
+                  <div className="ml-12 flex items-center space-x-12">
+                    <a
+                      className="hover:underline hover:underline-offset-4"
+                      href="/"
+                      rel="noopener noreferrer"
+                    >
+                      Home
+                    </a>
+                    <a
+                      className="hover:underline hover:underline-offset-4"
+                      href="/about"
+                      rel="noopener noreferrer"
+                    >
+                      About
+                    </a>
+                    <a
+                      className="hover:underline hover:underline-offset-4"
+                      href="/services"
+                      rel="noopener noreferrer"
+                    >
+                      Services
+                    </a>
+                    <a
+                      className="hover:underline hover:underline-offset-4"
+                      href="/contact"
+                      rel="noopener noreferrer"
+                    >
+                      Contact
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Desktop sign in links */}
           <ul className="flex flex-1 items-center justify-end gap-3">
+            <li>
+              <button
+                className="md:hidden inline-flex items-center justify-center p-1 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo"
+                onClick={toggleNavbar}
+              >
+                {isClick ? (
+                  <svg
+                    className="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 6h16M4 12h16m-7 6h7"
+                    />
+                  </svg>
+                )}
+              </button>
+            </li>
             <li>
               <Link
                 href="/signin"
@@ -64,6 +114,40 @@ export default function Header() {
           </ul>
         </div>
       </div>
+      {isClick && (
+        <div className="md:hidden">
+          <div className="px-4 pt-2 pb-3 space-y-1 sm:px-6">
+            <a
+              className="block text-indigo-200/85 transition hover:text-indigo-500"
+              href="/"
+              rel="noopener noreferrer"
+            >
+              Home
+            </a>
+            <a
+              className="block text-indigo-200/85 transition hover:text-indigo-500"
+              href="/about"
+              rel="noopener noreferrer"
+            >
+              About
+            </a>
+            <a
+              className="block text-indigo-200/85 transition hover:text-indigo-500"
+              href="/services"
+              rel="noopener noreferrer"
+            >
+              Services
+            </a>
+            <a
+              className="block text-indigo-200/85 transition hover:text-indigo-500"
+              href="/contact"
+              rel="noopener noreferrer"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
