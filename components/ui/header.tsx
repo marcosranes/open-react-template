@@ -12,51 +12,51 @@ export default function Header() {
 
   return (
     <header className="z-30 mt-2 w-full md:mt-5">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/90 px-3 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,theme(colors.gray.800),theme(colors.gray.700),theme(colors.gray.800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-sm">
+      <div className="mx-auto max-w-6xl px-1 sm:px-6">
+        <div className="relative flex flex-1 h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/90 px-3 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,theme(colors.gray.800),theme(colors.gray.700),theme(colors.gray.800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-sm">
           {/* Site branding */}
           <Logo />
-          <div className="max-w-7x1 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              <div className="flex-shrink-0">
-                <div className="hidden md:block">
-                  <div className="ml-12 flex items-center space-x-12">
-                    <a
-                      className="hover:underline hover:underline-offset-4"
-                      href="/"
-                      rel="noopener noreferrer"
-                    >
-                      Home
-                    </a>
-                    <a
-                      className="hover:underline hover:underline-offset-4"
-                      href="/about"
-                      rel="noopener noreferrer"
-                    >
-                      About
-                    </a>
-                    <a
-                      className="hover:underline hover:underline-offset-4"
-                      href="/services"
-                      rel="noopener noreferrer"
-                    >
-                      Services
-                    </a>
-                    <a
-                      className="hover:underline hover:underline-offset-4"
-                      href="/contact"
-                      rel="noopener noreferrer"
-                    >
-                      Contact
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
+          <ul className="flex flex-1 items-center justify-end gap-4">
+            <div className="flex items-center space-x-10">
+              <li className="hidden md:block">
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href="/"
+                  rel="noopener noreferrer"
+                >
+                  Home
+                </a>
+              </li>
+              <li className="hidden md:block">
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href="/about"
+                  rel="noopener noreferrer"
+                >
+                  About
+                </a>
+              </li>
+              <li className="hidden md:block">
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href="/services"
+                  rel="noopener noreferrer"
+                >
+                  Services
+                </a>
+              </li>
+              <li className="hidden md:block">
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href="/contact"
+                  rel="noopener noreferrer"
+                >
+                  Contact
+                </a>
+              </li>
+            </div>
             <li>
               <button
                 className="md:hidden inline-flex items-center justify-center p-1 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo"
